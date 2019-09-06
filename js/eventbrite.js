@@ -2,7 +2,7 @@
 
 class EventBrite {
   constructor() {
-    this.token_auth = 'FMUBAQWJIR25T653ZPM4'
+    this.token_auth = 'XY7LWTTVAKS6ECNSFHHU'
     this.sort = 'date'
   }
 

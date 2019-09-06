@@ -21,8 +21,15 @@ document.getElementById('searchBtn').addEventListener('click', (e) => {
   if(searchText !== '') {
     // When there is a search
     eventBrite.getEvents(searchText, selectedCategory)
-      .then((data) => {
-        console.log(data)
+      .then(events => {
+        if(events.events.events.length > 0) {
+          // If there are events show the result
+          ui.cleanResults()
+          ui.showEvents(events.events)
+        } else {
+          // No events, send an alert
+          ui.showMessage('No hay resultados', 'alert alert-danger mt-4')
+        }
       })
 
   } else {

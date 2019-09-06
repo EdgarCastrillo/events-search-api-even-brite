@@ -35,4 +35,28 @@ class Ui {
 
       })
   } 
+
+  // Method to print messages
+  showMessage(message, classes) {
+    const div = document.createElement('div')
+    div.classList = classes
+
+    // Add text
+    div.appendChild(document.createTextNode(message))
+    const searchDiv = document.querySelector('#search')
+    searchDiv.appendChild(div)
+
+    // Remove alert
+    setTimeout(() => {
+      this.cleanMessage()
+    }, 3000);
+  }
+
+  // Hide message if exist
+  cleanMessage() {
+    const alert = document.querySelector('.alert')
+    if(alert) {
+      alert.remove()
+    }
+  }
 }

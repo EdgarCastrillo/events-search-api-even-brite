@@ -18,5 +18,15 @@ document.getElementById('searchBtn').addEventListener('click', (e) => {
   console.log(selectedCategory)
 
   // Check that there is something written on the search
-  
+  if(searchText !== '') {
+    // When there is a search
+    eventBrite.getEvents(searchText, selectedCategory)
+      .then((data) => {
+        console.log(data)
+      })
+
+  } else {
+    // show message
+    ui.showMessage('Escribe algo en el buscador', 'alert alert-danger mt-4')
+  }
 })
